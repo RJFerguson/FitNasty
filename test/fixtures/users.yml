@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 1
+  start_weight: 1
+  gender: MyString
+  goal_weight: 1
+  goal_date: 2017-05-08
+  start_date: 2017-05-08
+  password_digest: MyString
+
+two:
+  name: MyString
+  age: 1
+  start_weight: 1
+  gender: MyString
+  goal_weight: 1
+  goal_date: 2017-05-08
+  start_date: 2017-05-08
+  password_digest: MyString

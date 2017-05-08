@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sleep_date: 2017-05-08
+  duration: 1
+  calories: 1
+
+two:
+  sleep_date: 2017-05-08
+  duration: 1
+  calories: 1
