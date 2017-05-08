@@ -1,0 +1,20 @@
+<h1>User Form: </h1>
+<%=form_for(@user) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :age %>
+<%= f.number_field :age %><br>
+<%= f.label :gender %>
+<%= f.text_field :gender %><br>
+<%= f.label :start_weight %>
+<%= f.number_field :start_weight %><br>
+<%= f.label :goal_weight %>
+<%= f.number_field :goal_weight %><br>
+<%= f.label :start_date %>
+<%= f.date_field :start_date %><br>
+<%= f.label :goal_date %>
+<%= f.date_field :goal_date %><br>
+<%= f.label :password %>
+<%= f.password_field :password %><br>
+<%= f.submit %>
+<% end %>
