@@ -1,10 +1,10 @@
 <h1>Exercise Form</h1>
 <%= form_for(@exercise) do |f| %>
-<%=f.label :activity %>
+<%= f.label :activity %>
 <%= f.collection_select(:exercise_id, Exercise.all, :id, :activity) %>
-<%=f.label :duration %>
-<%=f.number_field :duration %>
-<%=f.label :date_completed %>
-<%=f.date_field :date_completed %>
-<%=f.submit%> 
+<%= f.label :duration %>
+<%= f.number_field :duration %>
+<%= f.label :date_completed %>
+<%= f.date_field :date_completed %>
+<%= f.submit%>
 <% end %>

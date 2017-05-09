@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
     @food = Food.find_or_initialize_by(food_params)
     @eaten = UserFood.new(user_id: current_user.id, date_eat: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"))
 
-    @eaten.calories = @eaten.caloric_intake(@food.item)
+    @eaten.calories = @food.caloric_intake(@food.item)
 
     if @food.save
       @eaten["food_id"] = @food.id

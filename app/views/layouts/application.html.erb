@@ -19,9 +19,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <% if logged_in? %>
-        <li><a href="<%=profile_path(current_user)%>">User Home</a></li>
         <li><a href="<%=new_food_path%>">Add Food</a></li>
-        <li><a href="<%=new_exercise_path%>">Add Exercise</a></li>
+        <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
         <li><a href="<%=new_sleep_path%>">Add Sleep</a></li>
         <li><a href="<%=logout_path%>">Sign-Out</a></li>
       <% end %>
