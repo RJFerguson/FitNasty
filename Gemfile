@@ -54,4 +54,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'fatsecret-api'
+<<<<<<< HEAD
 gem 'fat_secret'
+=======
+gem 'fat_secret'
+>>>>>>> 1365da9af81584ff92430082c4ceffa67e827bf5
