@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :name
       t.integer :age
+      t.integer :height
       t.integer :start_weight
       t.string :gender
       t.integer :goal_weight
