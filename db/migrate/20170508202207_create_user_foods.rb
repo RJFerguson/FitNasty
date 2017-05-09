@@ -3,6 +3,8 @@ class CreateUserFoods < ActiveRecord::Migration[5.1]
     create_table :user_foods do |t|
       t.integer :user_id
       t.integer :food_id
+      t.integer :calories
+      t.date :date_eat
 
       t.timestamps
     end

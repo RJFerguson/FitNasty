@@ -2,4 +2,7 @@
 
 <p> <%= link_to "Add Food", new_food_path %></p>
 <p> <%= link_to "What exercise have you done today?", new_user_exercise_path %></p>
+<p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
 <p> <%= link_to "Sleepy Time?", new_sleep_path %></p>
+
+<%= link_to 'Log Out', logout_path, method: :delete%>

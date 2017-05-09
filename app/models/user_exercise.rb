@@ -15,4 +15,5 @@ class UserExercise < ApplicationRecord
     end
   end
 
+
 end
