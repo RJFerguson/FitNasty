@@ -1,18 +1,23 @@
-class ExercisesController < ApplicationController
+class UserExercisesController < ApplicationController
 
   def new
-    @exercise = Exercise.new
+    @exercise = UserExercise.new
+    # byebug
   end
 
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = UserExercise.new(exercise_params)
+    @exercise.user_id = User.find_by(id: session[:user_id]).id
     @exercise.calories = @exercise.calories_burned
-
     if @exercise.save
-      redirect_to profile_path(current_user)
+      redirect_to user_exercise_path(@exercise)
     else
-      redirect_to new_exercise_path
+      redirect_to new_user_exercise_path
     end
+  end
+
+  def show
+    @exercise = UserExercise.find(params[:id])
   end
 
   def edit
@@ -38,6 +43,6 @@ class ExercisesController < ApplicationController
 
   private
   def exercise_params
-    params.require(:exercise).permit(:duration, :activity, :intensity_level, :date_completed)
+    params.require(:user_exercise).permit(:exercise_id, :duration, :date_completed)
   end
 end

@@ -13,11 +13,8 @@
 ActiveRecord::Schema.define(version: 20170509161951) do
 
   create_table "exercises", force: :cascade do |t|
-    t.integer "duration"
     t.string "activity"
-    t.integer "intensity_level"
-    t.date "date_completed"
-    t.integer "calories"
+    t.float "met"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +38,9 @@ ActiveRecord::Schema.define(version: 20170509161951) do
   create_table "user_exercises", force: :cascade do |t|
     t.integer "user_id"
     t.integer "exercise_id"
+    t.integer "duration"
+    t.date "date_completed"
+    t.integer "calories"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170509161951) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.integer "height"
     t.integer "start_weight"
     t.string "gender"
     t.integer "goal_weight"
