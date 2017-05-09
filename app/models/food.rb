@@ -16,4 +16,5 @@ class Food < ApplicationRecord
     foods_eaten_today = Food.group(:date_eat).where(:date_eat == Date.now)
     foods_eaten_today.sum(&:calories)
   end
+
 end

@@ -6,7 +6,7 @@ class SleepsController < ApplicationController
 
   def create
     @sleep = Sleep.new(sleep_params)
-    @sleep.calories = @sleep.calories_burned
+    # @sleep.calories = @sleep.calories_burned
 
     if @sleep.save
       redirect_to profile_path(current_user)
@@ -16,7 +16,7 @@ class SleepsController < ApplicationController
   end
 
   def edit
-    @exercise = Exercise.find(:id)  #or is it current_user.sleeps.find(:id)
+    @sleep = Sleep.find(:id)  #or is it current_user.sleeps.find(:id)
   end
 
   def update
