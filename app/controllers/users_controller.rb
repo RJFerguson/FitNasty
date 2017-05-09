@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    byebug 
+    byebug
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -34,7 +34,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-  end 
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.delete
+  end
 
   private
 
@@ -42,4 +47,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :age, :start_weight, :gender, :goal_weight, :goal_date, :start_date, :password)
   end
 end
-

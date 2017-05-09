@@ -1,0 +1,8 @@
+<h1>How did you sleep today?</h1>
+<%= form_for(@sleep) do |f| %>
+<%=f.label :duration %>
+<%=f.number_field :duration %>
+<%=f.label :sleep_date %>
+<%=f.date_field :sleep_date %>
+<%=f.submit%>
+<% end %>

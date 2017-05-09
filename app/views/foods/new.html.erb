@@ -1,0 +1,8 @@
+<h1>What did you Eat Today?</h1>
+<%= form_for(@food) do |f| %>
+<%=f.label :item %>
+<%=f.text_field :item %>
+<%=f.label :date_eat %>
+<%=f.date_field :date_eat %>
+<%=f.submit%>
+<% end %>
