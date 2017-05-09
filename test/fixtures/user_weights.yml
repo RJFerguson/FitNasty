@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs_to: 
+  day: 2017-05-09
+  weight: 1
+
+two:
+  belongs_to: 
+  day: 2017-05-09
+  weight: 1

@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    @food.calories = @food.calculate_calories #possible formula or API call
+    @food.calories = @food.caloric_intake
 
     if @food.save
       redirect_to profile_path(current_user)

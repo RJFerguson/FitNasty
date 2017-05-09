@@ -6,7 +6,7 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = Exercise.new(exercise_params)
-    @exercise.calories = @exercise.calculate_calories
+    @exercise.calories = @exercise.calories_burned
 
     if @exercise.save
       redirect_to profile_path(current_user)

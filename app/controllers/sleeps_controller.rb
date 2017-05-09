@@ -6,7 +6,7 @@ class SleepsController < ApplicationController
 
   def create
     @sleep = Sleep.new(sleep_params)
-    @sleep.calories = @sleep.calculate_calories
+    @sleep.calories = @sleep.calories_burned
 
     if @sleep.save
       redirect_to profile_path(current_user)
