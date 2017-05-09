@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-  end
+      @user = User.find(session[:user_id])
+    end
 
   def update
     @user = User.find(params[:id])
@@ -39,6 +39,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :age, :start_weight, :gender, :goal_weight, :goal_date, :start_date, :password)
+    params.require(:user).permit(:name, :age, :height, :start_weight, :gender, :goal_weight, :goal_date, :start_date, :password) #added height
   end
 end
