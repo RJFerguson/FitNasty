@@ -37,3 +37,40 @@ exercise_type = {
   User.create(name: 'Shawn', age: 31, height: 66, gender: 'Male', start_weight: 155, goal_weight: 145, start_date: '2017-01-01', goal_date: '2017-05-28', password: 'meep')
   User.create(name: 'Janie', age: 27, height: 71, gender: 'Woman', start_weight: 120, goal_weight: 140, start_date: '2017-01-01', goal_date: '2017-06-01', password: 'badpassword')
   User.create(name: 'Rick', age: 40, height: 63, gender: 'Male', start_weight: 110, goal_weight: 130, start_date: '2017-01-01', goal_date: '2017-06-01', password: 'jacknife')
+
+	#Seed Food 
+
+	Food.create(item: 'Steak')
+	Food.create(item: 'Milk')
+	Food.create(item: 'Apple')
+	Food.create(item: 'Pasta')
+	Food.create(item: 'Tomato')
+	Food.create(item: 'Tuna')
+
+
+	#Seed UserFood
+
+	UserFood.create(user_id: 1, food_id: 1, calories: 201, date_eat: "2017-05-09")
+	UserFood.create(user_id: 1, food_id: 2, calories: 50, date_eat: "2017-05-09")
+	UserFood.create(user_id: 1, food_id: 3, calories: 52, date_eat: "2017-05-09")
+	UserFood.create(user_id: 1, food_id: 4, calories: 158, date_eat: "2017-05-09")
+	UserFood.create(user_id: 1, food_id: 5, calories: 18, date_eat: "2017-05-09")
+	UserFood.create(user_id: 1, food_id: 6, calories: 116, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 1, calories: 201, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 2, calories: 50, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 3, calories: 52, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 4, calories: 158, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 5, calories: 18, date_eat: "2017-05-09")
+	UserFood.create(user_id: 2, food_id: 6, calories: 116, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 1, calories: 201, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 2, calories: 50, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 3, calories: 52, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 4, calories: 158, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 5, calories: 18, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 6, calories: 116, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 1, calories: 201, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 2, calories: 50, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 3, calories: 52, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 4, calories: 158, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 5, calories: 18, date_eat: "2017-05-09")
+	UserFood.create(user_id: 3, food_id: 6, calories: 116, date_eat: "2017-05-09")
