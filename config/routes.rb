@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :foods
   resources :sleeps
   resources :user_exercises
+  resources :user_sleeps 
   resources :users, except: [:show, :new]
 
 
