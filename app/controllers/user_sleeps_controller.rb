@@ -6,9 +6,7 @@ class UserSleepsController < ApplicationController
   end
 
   def create
-    byebug
-    @sleep = UserSleep.new(sleep_params)
-    @sleep.user_id = current_user.id
+    @sleep = UserSleep.new(user_id: current_user.id, duration: sleep_params[:duration], sleep_date: sleep_params[:sleep_date])
     @sleep.calories = @sleep.calories_burned
 
     if @sleep.save
@@ -19,7 +17,6 @@ class UserSleepsController < ApplicationController
   end
 
   def show
-    # @user = User.find_by(id: session[:user_id])
     @sleep = UserSleep.find(params[:id])
   end
 
