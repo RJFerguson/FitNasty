@@ -3,7 +3,7 @@ class Food < ApplicationRecord
   has_many :users, through: :user_foods
 
   def food_check(query)
-    foods = FatSecret::Food.search("#{query}")
+    foods = FatSecret::Food.search("#{query}") 
     food = foods.first.description
     food
   end

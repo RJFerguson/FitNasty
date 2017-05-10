@@ -15,7 +15,7 @@ class FoodsController < ApplicationController
       @food.food_id = @newfood.id
       @user.current_weight(@food.calories)
       @food.save
-      redirect_to food_path(@newfood)
+      redirect_to food_path(@food)
     else
       redirect_to new_food_path
     end
