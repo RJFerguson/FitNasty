@@ -12,7 +12,4 @@ class Food < ApplicationRecord
     eaten_food = food_check(food)
     eaten_food.split(" | ").first.split(" - ").last.split(": ").last.gsub("kcal", "")
   end
-
-  
-
 end
