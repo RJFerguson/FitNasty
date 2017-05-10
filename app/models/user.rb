@@ -27,11 +27,21 @@ class User < ApplicationRecord
     self.total_calories_eaten - (self.total_calories_burned)
   end
 
-  def current_weight
+  def current_weight(calories)
     if self.user_weights.last == nil
-      curr_weight = self.start_weight + (self.net_calories/3500)
+      curr_weight = self.start_weight + calories/3500
+      UserWeight.create(user_id: self.id, day: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"), weight: curr_weight)
     else
-      curr_weight = self.user_weights.last.weight + (self.net_calories/3500)
+      curr_weight = self.user_weights.last.weight + calories/3500
+      UserWeight.create(user_id: self.id, day: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"), weight: curr_weight)
+  end
+end
+
+  def show_weight
+    if self.user_weights.last == nil
+      self.start_weight
+    else
+    self.user_weights.last.weight
   end
 end
 

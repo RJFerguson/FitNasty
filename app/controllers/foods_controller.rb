@@ -8,10 +8,12 @@ class FoodsController < ApplicationController
   def create
     @food = UserFood.new(user_id: current_user.id, date_eat: user_food_params[:date_eat])
     @newfood = Food.find_or_initialize_by(food_params)
-
+    @user = current_user
     @food.calories = @newfood.caloric_intake(@newfood.item)
+
     if @newfood.save
       @food.food_id = @newfood.id
+      @user.current_weight(@food.calories)
       @food.save
       redirect_to food_path(@newfood)
     else

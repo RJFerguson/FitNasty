@@ -56,9 +56,7 @@ ActiveRecord::Schema.define(version: 20170509161951) do
   create_table "user_weights", force: :cascade do |t|
     t.integer "user_id"
     t.date "day"
-    t.integer "daily_weight"
-    t.integer "daily_calories_burned"
-    t.integer "daily_sleep_duration"
+    t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
