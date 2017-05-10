@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   get '/users/:id', to: 'users#show', as: 'profile'
   resources :foods
-  resources :sleeps
+  resources :user_foods
   resources :user_exercises
-  resources :user_sleeps 
+  resources :user_sleeps
   resources :users, except: [:show, :new]
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

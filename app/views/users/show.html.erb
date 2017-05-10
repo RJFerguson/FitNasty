@@ -1,9 +1,4 @@
-<h1> IN PROGRESS USER DASHBOARD</h1>
-
-<p> <%= link_to "Add Food", new_food_path %></p>
-<p> <%= link_to "What exercise have you done today?", new_user_exercise_path %></p>
-<p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
-<p> <%= link_to "Sleepy Time?", new_user_sleep_path %></p>
+<h1>Welcome <%= @user.name %></h1>
 
 <div>
   <div>
@@ -11,7 +6,7 @@
     <p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
     <p> Calories Burned Total: <%= @user.total_calories_burned %></p>
     <p> Caloric Net: <%= @user.net_calories %></p>
-    <p> Current Weight: <%= @user.user_weights.last.weight %></p>
+    <p> Current Weight: <%= @user.show_weight %></p>
   </div>
 </div>
 

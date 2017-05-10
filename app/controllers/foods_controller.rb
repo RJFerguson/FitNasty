@@ -1,29 +1,37 @@
 class FoodsController < ApplicationController
 
   def new
-    @food = Food.new
+    @food = UserFood.new
+    @newfood = Food.new
   end
 
   def create
-    @food = Food.find_or_initialize_by(food_params)
-    @eaten = UserFood.new(user_id: current_user.id, date_eat: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"))
+    @food = UserFood.new(user_id: current_user.id, date_eat: user_food_params[:date_eat])
+    @newfood = Food.find_or_initialize_by(food_params)
     @user = current_user
+    @food.calories = @newfood.caloric_intake(@newfood.item)
 
-    @eaten.calories = @food.caloric_intake(@food.item)
-
-    if @food.save
-      @eaten["food_id"] = @food.id
-      @eaten.save
-      @user.current_weight(@eaten.calories)
-      redirect_to profile_path(current_user)
+    if @newfood.save
+      @food.food_id = @newfood.id
+      @user.current_weight(@food.calories)
+      @food.save
+      redirect_to food_path(@newfood)
     else
       redirect_to new_food_path
     end
+  end
+
+  def show
+    @food = UserFood.find(params[:id])
   end
 
   private
 
   def food_params
     params.require(:food).permit(:item)
+  end
+
+  def user_food_params
+    params.require(:user_food).permit(:date_eat)
   end
 end

@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("jakob-owens-208999.jpg");
+  background-size: cover;
+  // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(229, 229, 229, 1)));
+  // background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+}
+
+div#center {
+  position: absolute;
+  // left: 5%;
+  // margin: 0 auto;
+  height: 475px;
+  text-align: center;
+}
+
+h1#logo {
+  font-size: 100px;
+  color: #000;
+  font-weight: 500;
+  margin: 8x;
+  margin-top: 400px;
+}
+
+div#center span {
+  position: relative;
+  top: -5px;
+  font-size: 50px;
+  color: inherit;
+}
+
+@-webkit-keyframes janimation {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0) translate(0px, 0px);
+    color: transparent;
+  }
+  95% {
+    -webkit-transform: rotate(0deg) scale(1.1) translate(0px, 5px);
+    color: #999;
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1) translate(0px, 0px);
+    color: #999;
+  }
+}
+
+div#center div {
+  position: relative;
+  display: inline-block;
+  -webkit-animation: janimation 5s linear;
+}
+
+div#center div.letter_container_1 {
+  -webkit-animation-delay: 0s;
+}
+
+div#center div.letter_container_2 {
+  -webkit-animation-delay: .1s;
+}
+
+div#center div.letter_container_3 {
+  -webkit-animation-delay: .2s;
+}
+
+div#center div.letter_container_4 {
+  -webkit-animation-delay: .3s;
+}
+
+div#center div.letter_container_5 {
+  -webkit-animation-delay: .4s;
+}
+
+div#center div.letter_container_6 {
+  -webkit-animation-delay: .5s;
+}
+
+div#center div.letter_container_7 {
+  -webkit-animation-delay: .6s;
+}
+
+div#center div.letter_container_8 {
+  -webkit-animation-delay: .7s;
+}
+
+div#center div.letter_container_9 {
+  -webkit-animation-delay: .8s;
+}
+
+div#center div.letter_container_10 {
+  -webkit-animation-delay: .9s;
+}
+
+div#center div.letter_container_11 {
+  -webkit-animation-delay: 1s;
+}
+
+div#center div.letter_container_12 {
+  -webkit-animation-delay: 1.1s;
+}

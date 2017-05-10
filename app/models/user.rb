@@ -2,7 +2,6 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :user_sleeps
-  has_many :sleeps, through: :user_sleeps
 
   has_many :user_exercises
   has_many :exercises, through: :user_exercises
@@ -36,22 +35,24 @@ class User < ApplicationRecord
       curr_weight = self.user_weights.last.weight + calories/3500
       UserWeight.create(user_id: self.id, day: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"), weight: curr_weight)
   end
+end
 
   def show_weight
-    self.user_weights.last.weight
+    if self.user_weights.last == nil
+      self.start_weight
+    else
+    self.user_weights.last.weight 
   end
-
 end
 
   private
-
 
   def day_end_totals
     User_Weight.create(user_id: self.id,
     day: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"),
     daily_weight: self.end_day_weight,
     daily_calories_burned: self.end_day_calories_burned,
-    # daily_sleep_duration: UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d")).sum(&:duration)
+    daily_sleep_duration: UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d")).sum(&:duration)
     )
   end
 
