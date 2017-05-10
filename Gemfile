@@ -56,4 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fatsecret-api'
 gem 'fat_secret'
 
-gem 'whenever'
+gem 'chartkick'
+gem 'groupdate'
+gem 'active_median'
+gem 'fusioncharts-rails'
