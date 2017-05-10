@@ -28,7 +28,6 @@ class User < ApplicationRecord
   end
 
   def current_weight
-
     if self.user_weights.last == nil
       curr_weight = self.start_weight + (self.net_calories/3500)
     else

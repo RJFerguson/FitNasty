@@ -10,34 +10,43 @@
     <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
   </head>
 
-  <body>
-  <% unless controller_name == "welcome" %>
-
- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      <% if logged_in? %>
-        <li><a href="<%=new_food_path%>">Add Food</a></li>
-        <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
-
-        <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
-        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-      <% end %>
-      <% if !logged_in? %>
-        <li class="active"><a href="<%=signin_path%>">Sign-In<span class="sr-only">(current)</span></a></li>
-        <li><a href="<%=signup_path%>">Sign-Up</a></li>
-      <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
-<% end %>
+  <% if controller_name == "welcome" %>
+  <body id="landing_page">
     <div class="container">
       <%= yield %>
     </div>
   </body>
+    <% else %>
+    <body>
+    <% unless controller_name == "welcome" %>
+
+   <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        <% if logged_in? %>
+          <li><a href="<%=new_food_path%>">Add Food</a></li>
+          <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
+
+          <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
+          <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        <% end %>
+        <% if !logged_in? %>
+          <li class="active"><a href="<%=signin_path%>">Sign-In<span class="sr-only">(current)</span></a></li>
+          <li><a href="<%=signup_path%>">Sign-Up</a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <% end %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+  <% end %>
+
 </html>
