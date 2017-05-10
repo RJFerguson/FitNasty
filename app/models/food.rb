@@ -13,4 +13,6 @@ class Food < ApplicationRecord
     eaten_food.split(" | ").first.split(" - ").last.split(": ").last.gsub("kcal", "")
   end
 
+  
+
 end
