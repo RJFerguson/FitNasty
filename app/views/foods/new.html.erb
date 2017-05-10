@@ -1,6 +1,10 @@
 <h1>What did you Eat Today?</h1>
-<%= form_for(@food) do |f| %>
+<%= form_for @food, url: foods_path do |f| %>
 <%=f.label :item %>
-<%=f.text_field :item %>
+<%= fields_for @newfood do |a| %>
+<%= a.text_field :item %>
+<% end %>
+<%=f.label :date_eat %>
+<%=f.date_field :date_eat %>
 <%=f.submit%>
 <% end %>

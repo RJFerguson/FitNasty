@@ -18,8 +18,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(229, 229, 229, 1)));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+  background-image: url("jakob-owens-208999.jpg");
+  background-size: cover;
+  /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(229, 229, 229, 1)));*/
+  /*background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);*/
 }
 
 div#center {
@@ -35,13 +37,13 @@ h1#logo {
   color: #000;
   font-weight: 500;
   margin: 10px;
-  margin-top: 345px;
+  margin-top: 400px;
 }
 
 div#center span {
   position: relative;
   top: -5px;
-  font-size: 30px;
+  font-size: 50px;
   color: inherit;
 }
 
