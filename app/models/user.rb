@@ -19,25 +19,30 @@ class User < ApplicationRecord
 
   def total_calories_burned
     exercises = UserExercise.where(user_id: self.id, date_completed: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"))
-    # sleeping = UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"))
+    sleeping = UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"))
 
-    exercises.sum(&:calories) #+ sleeping.sum(&:calories)
+    exercises.sum(&:calories) + sleeping.sum(&:calories)
   end
 
   def net_calories
     self.total_calories_eaten - (self.total_calories_burned)
   end
 
-  # def current_weight
-  #   curr_weight = self.user_weights.last.weight + (self.net_calories/3500)
-  # end
+  def current_weight
+
+    if self.user_weights.last == nil
+      curr_weight = self.start_weight + (self.net_calories/3500)
+    else
+      curr_weight = self.user_weights.last.weight + (self.net_calories/3500)
+  end
+end
 
   private
 
   #run at end of day
 
   def end_day_weight
-    self.user_weights.last.weight + (self.net_calories/3500)
+    self.current_weight
   end
 
   def end_day_calories_burned

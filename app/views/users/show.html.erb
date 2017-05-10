@@ -1,5 +1,10 @@
 <h1>Welcome <%= @user.name %></h1>
 
+<p> <%= link_to "Add Food", new_food_path %></p>
+<p> <%= link_to "What exercise have you done today?", new_user_exercise_path %></p>
+<p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
+<p> <%= link_to "Sleepy Time?", new_user_sleep_path %></p>
+
 <div>
   <div>
     <h2>Daily Sum Up</h2>

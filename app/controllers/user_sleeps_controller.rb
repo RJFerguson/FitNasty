@@ -2,23 +2,25 @@ class UserSleepsController < ApplicationController
   before_action :authorize_user
 
   def new
-    @user_sleep = Usersleep.new
-    @user_sleep.user_id = @cureent_user.id 
-    @user_sleep.sleep_id = Sleep.last.id 
+    @sleep = UserSleep.new
   end
 
   def create
-    usersleep = Usersleep.new(sleep_params)
+    @sleep = UserSleep.new(sleep_params)
 
-    if usersleep.save
-      redirect_to usersleep.user
+    @sleep.user_id = User.find_by(id: session[:user_id]).id
+    @sleep.calories = @sleep.calories_burned
+    if @sleep.save
+      redirect_to user_sleep_path(@sleep)
+    else
+      redirect_to user_sleep_path
     end
   end
 
   private
 
   def sleep_params
-    params.require(:appearance).permit(:user_id, :sleep_id)
+    params.require(:user_sleep).permit(:user_id, :duration, :sleep_date)
   end
 
 end
