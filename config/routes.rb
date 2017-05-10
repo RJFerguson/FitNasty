@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'profile'
   resources :foods
   resources :user_foods
-  resources :sleeps
   resources :user_exercises
-  resources :user_sleeps 
+  resources :user_sleeps
   resources :users, except: [:show, :new]
 
 end
