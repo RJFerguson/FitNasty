@@ -1,9 +1,6 @@
 <html>
   <head>
-    <!-- <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %> -->
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
-    <script src="/js/highmaps.js"></script>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   </head>
 
   <body>
@@ -19,9 +16,25 @@
       </div>
 
       <div>
-        <h2>Sleep Log</h2>
-        <%= scatter_chart @user.user_sleeps.pluck(:sleep_date, :duration), xtitle: 'Date', ytitle: 'Sleep Duration' %>
+        <h2>Food Log</h2>
       </div>
+      <% food_log_hash = {} %>
+      <% @user.user_foods.each {|x| food_log_hash[x.date_eat] = x.calories }%>
+      <%= line_chart food_log_hash, xtitle: "Date", ytitle: "Caloric Intake"%>
+      <div>
+        <h2>Sleep Log</h2>
+        <% sleep_log_hash = {} %>
+        <% @user.user_sleeps.each {|x| sleep_log_hash[x.sleep_date] = x.duration }%>
+        <%= line_chart sleep_log_hash, xtitle: "Date", ytitle: "Sleep Duration" %>
+      </div>
+
+      <div>
+        <h2>Exercise Log</h2>
+        <% exercise_log_hash = {} %>
+        <% @user.user_exercises.each {|x| exercise_log_hash[x.date_completed] = x.calories }%>
+        <%= line_chart exercise_log_hash, xtitle: "Date", ytitle: "Calories Burned" %>
+      </div>
+
     </div>
 
 
