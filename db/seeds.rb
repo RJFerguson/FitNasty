@@ -74,3 +74,8 @@ exercise_type = {
 	UserFood.create(user_id: 3, food_id: 4, calories: 158, date_eat: "2017-05-09")
 	UserFood.create(user_id: 3, food_id: 5, calories: 18, date_eat: "2017-05-09")
 	UserFood.create(user_id: 3, food_id: 6, calories: 116, date_eat: "2017-05-09")
+
+
+	#seed UserExercise 
+
+	
