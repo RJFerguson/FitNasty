@@ -6,6 +6,7 @@ class UserExercise < ApplicationRecord
   	cm = self.user.height * 2.54 #convert from inches to cm
   	kilo = self.user.start_weight * 0.453592 #convert from pounds to kilos
   	age = self.user.age
+
     if self.user.gender == 'Woman'
     	bmr = (9.56 * kilo) + (1.85 * cm) - (4.68 * age) + 655
     	(bmr / 24 * self.duration * self.exercise.met).to_f
@@ -14,6 +15,4 @@ class UserExercise < ApplicationRecord
     	(bmr / 24 * self.duration * self.exercise.met).to_f
     end
   end
-
-
 end

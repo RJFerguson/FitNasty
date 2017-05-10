@@ -5,4 +5,15 @@
 <p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
 <p> <%= link_to "Sleepy Time?", new_user_sleep_path %></p>
 
+<div>
+  <div>
+    <h2>Daily Sum Up</h2>
+    <p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
+    <p> Calories Burned Total: <%= @user.total_calories_burned %></p>
+    <p> Caloric Net: <%= @user.net_calories %></p>
+    <p> Current Weight: <%= @user.current_weight %></p>
+  </div>
+</div>
+
+
 <%= link_to 'Log Out', logout_path, method: :delete%>
