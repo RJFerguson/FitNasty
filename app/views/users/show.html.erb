@@ -11,7 +11,7 @@
     <p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
     <p> Calories Burned Total: <%= @user.total_calories_burned %></p>
     <p> Caloric Net: <%= @user.net_calories %></p>
-    <p> Current Weight: <%= @user.current_weight %></p>
+    <p> Current Weight: <%= @user.user_weights.last.weight %></p>
   </div>
 </div>
 
