@@ -1,6 +1,5 @@
 class UserSleep < ApplicationRecord
 	belongs_to :user
-	belongs_to :sleep
 
 	def calories_burned
     sleep_met = 0.9

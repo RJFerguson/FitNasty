@@ -2,7 +2,6 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :user_sleeps
-  has_many :sleeps, through: :user_sleeps
 
   has_many :user_exercises
   has_many :exercises, through: :user_exercises
@@ -39,26 +38,12 @@ end
 
   private
 
-  #run at end of day
-
-  def end_day_weight
-    self.current_weight
-  end
-
-  def end_day_calories_burned
-    self.total_calories_burned
-  end
-
-  def end_day_calories_eaten
-    self.total_calories_eaten
-  end
-
   def day_end_totals
     User_Weight.create(user_id: self.id,
     day: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d"),
     daily_weight: self.end_day_weight,
     daily_calories_burned: self.end_day_calories_burned,
-    # daily_sleep_duration: UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d")).sum(&:duration)
+    daily_sleep_duration: UserSleep.where(user_id: self.id, sleep_date: DateTime.parse(Time.now.to_s).strftime("%Y-%m-%d")).sum(&:duration)
     )
   end
 
