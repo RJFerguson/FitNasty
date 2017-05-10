@@ -1,2 +1,0 @@
-class SleepsController < ApplicationController
-end
