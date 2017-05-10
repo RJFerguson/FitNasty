@@ -1,0 +1,10 @@
+<h1> Food Selected: <%= @food.item.capitalize %> </h1>
+<h2> Serving Size: <%= @serving_size %> </h2>
+<h2> Calories per Serving Size: <%= @food.calories %> </h2>
+
+
+<%= form_for @userfood, url: food_path(@userfood) do |f| %>
+<%=f.label :user_serving %>
+<%= f.number_field :user_serving %>
+<%=f.submit 'Add Serving Amount' %>
+<% end %>
