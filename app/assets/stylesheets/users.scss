@@ -16,6 +16,17 @@
 //   box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
 // }
 
+ h2 {
+  text-align: center;
+ }
+
+ div.progress {
+   border: 2px solid #000000;
+   margin: 10px;
+ }
+
+
+
 div#stats.col-sm-4.col-sm-offset-1 {
   text-align: center;
   background-color: rgba(255,255,255,.7);
@@ -38,22 +49,3 @@ div#left_table.col-sm-4.col-sm-offset-1 {
   border-radius: 25px;
   border: 2px solid #000000;
 }
-
-.container-fluid {
-  background-image: url("garrhet-sampson-178990.jpg");
-  background-size: cover;
-//   -webkit-filter: blur(5px);
-//   -moz-filter: blur(5px);
-//   -o-filter: blur(5px);
-//   -ms-filter: blur(5px);
-//   filter: blur(5px);
- }
-
- h2 {
-  text-align: center;
- }
-
- div.progress {
-   border: 2px solid #000000;
-   margin: 10px;
- }

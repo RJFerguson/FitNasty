@@ -1,3 +1,21 @@
+<body id="user-sleep">
+
+   <nav class="navbar navbar-default">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
+       </div>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+           <li><a href="<%=new_food_path%>">Add Food</a></li>
+           <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
+           <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
+           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+
 <h1>How did you sleep today?</h1>
 <%= form_for(@sleep) do |f| %>
 <%=f.label :duration %>
@@ -6,3 +24,4 @@
 <%=f.date_field :sleep_date %>
 <%=f.submit%>
 <% end %>
+</body>
