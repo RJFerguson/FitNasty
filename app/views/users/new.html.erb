@@ -1,43 +1,34 @@
-<body id="user-home"> 
-   <nav class="navbar navbar-default">
-     <div class="container-fluid">
-       <div class="navbar-header">
-         <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
-       </div>
-       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav">
-           <li><a href="<%=new_food_path%>">Add Food</a></li>
-           <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
-           <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
-           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-         </ul>
-       </div>
-     </div>
-   </nav>
 
+<body id="user-signup">
+  <div id="form-main">
+    <div id="form-enter">
+      <div id="new-form">
 
-<h1>User Form: </h1>
-<%=form_for(@user) do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br>
-<%= f.label :age %>
-<%= f.number_field :age %><br>
-<%= f.label :height %>
-<%= f.number_field :height%><br> <!-- added height -->
-<%= f.label :gender %>
-<%= f.text_field :gender %><br>
-<%= f.label :start_weight %>
-<%= f.number_field :start_weight %><br>
-<%= f.label :goal_weight %>
-<%= f.number_field :goal_weight %><br>
-<%= f.label :start_date %>
-<%= f.date_field :start_date %><br>
-<%= f.label :goal_date %>
-<%= f.date_field :goal_date %><br>
-<%= f.label :password %>
-<%= f.password_field :password %><br>
-<%= f.submit %>
-<% end %>
+        <div style="text-align: center;"><h1>User Form: </h1></div>
+        <%=form_for(@user) do |f| %>
+        <div style="text-align: center;"><%= f.label :name %></div>
+        <div style="text-align: center; color: black;"><%= f.text_field :name %><br></div>
+        <div style="text-align: center;"><%= f.label :age %></div>
+        <div style="text-align: center; color: black;"><%= f.number_field :age %></div><br>
+        <div style="text-align: center;"><%= f.label :height %></div>
+        <div style="text-align: center; color: black;"><%= f.number_field :height%></div><br> 
+        <div style="text-align: center;"><%= f.label :gender %></div>
+        <div style="text-align: center; color: black;"><%= f.text_field :gender %></div><br>
+        <div style="text-align: center;"><%= f.label :start_weight %></div>
+        <div style="text-align: center; color: black;"><%= f.number_field :start_weight %></div><br>
+        <div style="text-align: center;"><%= f.label :goal_weight %></div>
+        <div style="text-align: center; color: black;"><%= f.number_field :goal_weight %></div><br>
+        <div style="text-align: center;"><%= f.label :start_date %></div>
+        <div style="text-align: center; color: black;"><%= f.date_field :start_date %></div><br>
+        <div style="text-align: center;"><%= f.label :goal_date %></div>
+        <div style="text-align: center; color: black;"><%= f.date_field :goal_date %></div><br>
+        <div style="text-align: center;"><%= f.label :password %></div>
+        <div style="text-align: center; color: black;"><%= f.password_field :password %></div><br>
+        <div style="text-align: center; color: black;"><%= f.submit %></div>
+        <% end %>
 
+      </div>
+    </div>
+  </div>
 
 </body>

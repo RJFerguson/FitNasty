@@ -14,29 +14,80 @@
  *= require_self
  */
 
+#form-enter {
+  background-color:rgba(0,0,0,.6);
+  color: rgba(255,255,255,0);
+  padding-left:35px;
+  padding-right:35px;
+  padding-top:35px;
+  padding-bottom:50px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+    margin-top:30px;
+  margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+#form-main{
+  width:100%;
+  float:left;
+  padding-top:0px;
+}
+
+div#new-form {
+  color: #ffffff;
+}
 
 body {
-    background: url("welcome.jpg") no-repeat center center fixed; 
+    background: url("welcome2.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 
 #user-sleep {
-    background: url("add_sleep_pic.jpg") no-repeat center center fixed; 
+    background: url("add_sleep_pic2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#user-food {
+    background: url("add_food_pic2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#user-exercise-submit {
+    background: url("exercise_submit2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#user-sleep-submit {
+    background: url("waking_up2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#user-food-submit {
+    background: url("food2.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#user-signup {
+    background: url("signup2.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 
 #signin {
-    background: url("sign_in_pic.jpg") no-repeat center center fixed; 
+    background: url("sign_in_pic2.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 
 #user-home {
-    background: url("dashboard_pic.jpg") no-repeat center center fixed; 
+    background: url("dashboard_pic2.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 
 #user-exercise {
-    background: url("add_exercise_pic.jpg") no-repeat center center fixed; 
+    background: url("add_exercise_pic2.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 
@@ -132,3 +183,4 @@ div#center div.letter_container_11 {
 div#center div.letter_container_12 {
   -webkit-animation-delay: 1.1s;
 }
+

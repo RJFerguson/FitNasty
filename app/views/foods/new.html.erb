@@ -1,12 +1,37 @@
-<h1>What did you Eat Today?</h1>
-<%= form_for @food, url: foods_path do |f| %>
-<%=f.label :item %>
-<%= fields_for @newfood do |a| %>
-<%= a.text_field :item %>
-<% end %>
-<%=f.label :date_eat %>
-<%=f.date_field :date_eat %>
-<%=f.submit%>
-<% end %>
+<body id="user-food-submit">
+	<nav class="navbar navbar-default">
+	 <div class="container-fluid">
+	   <div class="navbar-header">
+	     <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
+	   </div>
+	   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	     <ul class="nav navbar-nav">
+	       <li><a href="<%=user_path(@user)%>">Dashboard</a></li>
+	       <li><a href="<%=progress_path(@user)%>">Progress Detail</a></li>
+	       <li><a href="<%=new_food_path%>">Add Food</a></li>
+	       <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
+	       <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
+	       <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+	     </ul>
+	   </div>
+	 </div>
+	</nav>
+   
+  <div id="form-main">
+    <div id="form-enter">
+      <div id="new-form">
+		<div style="text-align: center;"><h1>What did you Eat Today?</h1></div>
+		<%= form_for @food, url: foods_path do |f| %>
+		<div style="text-align: center;"><%=f.label :item %></div>
+		<%= fields_for @newfood do |a| %>
+		<div style="text-align: center; color: black;"><%= a.text_field :item %></div>
+		<% end %>
+		<div style="text-align: center;"><%=f.label :date_eat %></div>
+		<div style="text-align: center; color: black;"><%=f.date_field :date_eat %></div><br>
+		<div style="text-align: center; color: black;"><%=f.submit%></div>
+		<% end %>
+     </div>
+    </div>
+  </div>
 
-
+</body>

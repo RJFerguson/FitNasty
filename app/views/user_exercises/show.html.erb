@@ -1,4 +1,16 @@
-<h1> Your Saved Activity: </h1> <%= @exercise.exercise.activity %>
-<h2> Duration </h2> <%= @exercise.duration %> hours
-<h2> Calories Burned </h2> <%= @exercise.calories %> calories
-<p><%= link_to 'Homepage', user_path %></p>
+<body id="user-exercise-submit">
+
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
+
+		<div style="text-align: center;"><h1> Your Saved Activity: </h1> <h3><%= @exercise.exercise.activity %></h3></div>
+		<div style="text-align: center;"><h2> Duration: </h2> <h3><%= @exercise.duration %> hours</h3></div>
+		<div style="text-align: center;"><h2> Calories Burned: </h2> <h3><%= @exercise.calories %> calories</h3></div><br>
+		<div style="text-align: center;"><p><%= link_to 'Dashboard', user_path %></p></div>
+
+		</div>
+	</div>
+</div>
+
+</body>

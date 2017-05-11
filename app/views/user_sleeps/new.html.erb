@@ -7,6 +7,8 @@
        </div>
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav">
+           <li><a href="<%=user_path(@user)%>">Dashboard</a></li>
+           <li><a href="<%=progress_path(@user)%>">Progress Detail</a></li>
            <li><a href="<%=new_food_path%>">Add Food</a></li>
            <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
            <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
@@ -16,12 +18,22 @@
      </div>
    </nav>
 
-<h1>How did you sleep today?</h1>
-<%= form_for(@sleep) do |f| %>
-<%=f.label :duration %>
-<%=f.number_field :duration %>
-<%=f.label :sleep_date %>
-<%=f.date_field :sleep_date %>
-<%=f.submit%>
-<% end %>
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
+
+      <div style="text-align: center;"><h1>How did you Sleep today?</h1></div>
+      <%= form_for(@sleep) do |f| %>
+      <div style="text-align: center;"><%=f.label "Duration (hours)" %></div>
+      <div style="text-align: center; color: black;"><%=f.number_field :duration %></div>
+      <div style="text-align: center;"><%=f.label :sleep_date %></div>
+      <div style="text-align: center; color: black;"><%=f.date_field :sleep_date %></div><br><br>
+      <div style="text-align: center; color: black;"><%=f.submit%></div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
 </body>
