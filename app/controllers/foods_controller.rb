@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
     @food = UserFood.new(user_id: current_user.id, date_eat: user_food_params[:date_eat])
     @newfood = Food.find_or_initialize_by(food_params)
     @user = current_user
-    @newfood.calories = @newfood.caloric_intake(@newfood.item)
+    @newfood.calories = @newfood.caloric_intake(@newfood.item).to_i
     @newfood.serving_size = @newfood.serving_size(@newfood.item)
   if @newfood.save
       @food.food_id = @newfood.id
