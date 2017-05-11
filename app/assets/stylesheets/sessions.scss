@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+body#signin_page{
+
+}
+
 html{
   background:url(jakob-owens-208999.jpg);
   background-size: cover;
@@ -81,14 +85,14 @@ html{
 }
 
 #password{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url(https://cdn.onlinewebfonts.com/svg/img_398183.svg);
 	background-size: 30px 30px;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
 
 #password:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url(https://cdn.onlinewebfonts.com/svg/img_398183.svg);
 	background-size: 30px 30px;
   background-position: 11px 8px;
 	background-repeat: no-repeat;

@@ -10,12 +10,16 @@
     <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
   </head>
 
-  <% if controller_name == "welcome" %>
+  <% if controller_name == "welcome"%>
   <body id="landing_page">
     <div class="container">
       <%= yield %>
     </div>
   </body>
+    <% elsif %>
+    <body id="signin_page">
+        <%= yield %>
+    </body>
     <% else %>
     <body>
     <% unless controller_name == "welcome" %>
