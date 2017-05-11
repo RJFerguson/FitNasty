@@ -1,7 +1,16 @@
-<h1>Sign In</h1>
-
-<%= form_tag(sessions_path) do%>
-  Name: <%= text_field_tag 'user[name]' %><br><br>
-  Password: <%= password_field_tag 'user[password]' %><br><br>
-  <%= submit_tag "Sign In"%>
-<% end %>
+<div id="form-main">
+  <div id="form-div">
+    <%= form_tag(sessions_path) do%>
+      <p class="name">
+        Name: <%= text_field_tag 'user[name]', nil, :class => "validate[required,custom[onlyLetter],length[0,100]] feedback-input", id: "name" %>
+      </p>
+      <p class="password">
+        Password: <%= password_field_tag 'user[password]', nil, id: 'password', class: "validate[required,custom[email]] feedback-input" %>
+      </p>
+      <div class="submit">
+        <%= submit_tag "Sign In", id: "button-blue"%>
+        <div class="ease"></div>
+      </div>
+    <% end %>
+  </div>
+</div>
