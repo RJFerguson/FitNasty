@@ -1,25 +1,15 @@
+<body id="user-sleep-submit">
 
-<body id="user-sleep">
-   <nav class="navbar navbar-default">
-     <div class="container-fluid">
-       <div class="navbar-header">
-         <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
-       </div>
-       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav">
-           <li><a href="<%=new_food_path%>">Add Food</a></li>
-           <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
-           <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>
-           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-         </ul>
-       </div>
-     </div>
-   </nav>
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
 
+        <div style="text-align: center;"><p><h2>Total Slept:</p></h2> <h3><%= @sleep.duration%></h3></div>
+        <div style="text-align: center;"><p><h2>Total Calories Burned while Sleeping :</h2></p> <h3><%= @sleep.calories%></h3></div>
+        <div style="text-align: center;"><p><%= link_to 'Homepage', user_path %></p></div>
 
-<p>Total Slept:</p> <%= @sleep.duration%>
-<p>Total Calories Burned while Sleeping :</p> <%= @sleep.calories%>
-<p><%= link_to 'Homepage', user_path %></p>
-
+      </div>
+    </div>
+</div>
 
 </body>

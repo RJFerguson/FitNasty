@@ -1,10 +1,21 @@
-<h1> Food Selected: <%= @food.item.capitalize %> </h1>
-<h2> Serving Size: <%= @serving_size %> </h2>
-<h2> Calories per Serving Size: <%= @food.calories %> </h2>
+<body id="user-food-submit">
 
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
 
-<%= form_for @userfood, url: food_path(@userfood) do |f| %>
-<%=f.label :user_serving %>
-<%= f.number_field :user_serving %>
-<%=f.submit 'Add Serving Amount' %>
-<% end %>
+			<div style="text-align: center;"><h1> Food Selected: <%= @food.item.capitalize %> </h1></div>
+			<div style="text-align: center;"><h2> Serving Size: <%= @serving_size %> </h2></div>
+			<div style="text-align: center;"><h2> Calories per Serving Size: <%= @food.calories %> </h2></div>
+
+			<%= form_for @userfood, url: food_path(@userfood) do |f| %>
+			<div style="text-align: center;"><%=f.label :user_serving %></div><br>
+			<div style="text-align: center; color: black;"><%= f.number_field :user_serving %></div><br>
+			<div style="text-align: center; color: black;"><%=f.submit 'Add Serving Amount' %></div><br>
+			<div style="text-align: center;"><p><%= link_to 'New Food', new_food_path %></p></div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+</body>

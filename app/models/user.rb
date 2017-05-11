@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_secure_password
 
   has_many :user_sleeps
@@ -85,8 +86,12 @@ end
 
     self.user_weights.each { |weight| actual_progress[weight.day] = 0 }
 
-    actual_progress.map do |k, v|
-      actual_progress[k] = UserWeight.where(user_id: self.id, day: k).last.weight
+    actual_progress.map do |k, v| 
+      if UserWeight.where(user_id: self.id, day: k).last == nil 
+        actual_progress[k] = 0
+      else 
+        actual_progress[k] = UserWeight.where(user_id: self.id, day: k).last.weight
+      end 
     end
 
     actual_progress
@@ -98,15 +103,15 @@ end
 
     if self.goal_weight < self.start_weight #losing weight
       if (today_projection - today_progress) < 0
-        "Try HARDER! You are #{(((today_projection - today_progress) / today_projection) * 100).round(1)}% below plan!"
+        "Try HARDER! You are #{(((today_projection - today_progress) / today_projection) * 100).round(1)}% behind schedule!"
       else
-        "GREAT job! You are #{(((today_projection - today_progress) / today_projection) * 100).round(1)}% above plan!"
+        "GREAT job! You are #{(((today_projection - today_progress) / today_projection) * 100).round(1)}% ahead of schedule!"
       end
     else
       if (today_progress - today_projection) < 0 #gaining weight
-        "Try HARDER! You are #{(((today_progress - today_projection) / today_projection) * 100).round(1)}% below plan!"
+        "Try HARDER! You are #{(((today_progress - today_projection) / today_projection) * 100).round(1)}% behind schedule!"
       else
-        "GREAT job! You are #{(((today_progress - today_projection) / today_projection) * 100).round(1)}% above plan!"
+        "GREAT job! You are #{(((today_progress - today_projection) / today_projection) * 100).round(1)}% ahead of schedule!"
       end
     end
   end

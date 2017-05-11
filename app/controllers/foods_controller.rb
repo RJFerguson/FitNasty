@@ -30,22 +30,21 @@ class FoodsController < ApplicationController
   def update
      @userfood = UserFood.find(params[:id])
      @food = Food.find(@userfood.food_id)
+     @user = current_user
      @userfood.calories = @food.calories * params[:user_food][:user_serving].to_i
      @userfood.user_serving = params[:user_food][:user_serving].to_i
      if @userfood.save
       @userfood.save
+      @user.current_weight(@userfood.calories)
       redirect_to food_path(@userfood)
     else
       redirect_to edit_food_path(@userfood)
     end
   end
 
-
-    # @user.current_weight(@food.calories)
-    # @food.calories = @food.calories * params[:serving]
-
   def show
     @food = UserFood.find(params[:id])
+    @user = current_user
   end
 
   private

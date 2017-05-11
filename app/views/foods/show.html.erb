@@ -1,3 +1,15 @@
-<h1> You Ate: <%= @food.user_serving %> servings of <%= Food.find(@food.food_id).item %></h1>
-<h2> Caloric Intake <%= @food.calories %> calories </h2> 
-<p><%= link_to 'Homepage', user_path %></p>
+<body id="user-food-submit">
+
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
+
+			<div style="text-align: center;"><h1> You Ate: <%= @food.user_serving %> servings of <%= Food.find(@food.food_id).item %></h1></div>
+			<div style="text-align: center;"><h2> Caloric Intake <%= @food.calories %> calories </h2> </div>
+			<div style="text-align: center;"><p><%= link_to 'Dashboard', user_path(@user) %></p></div>
+
+		</div>
+	</div>
+</div>
+
+</body>

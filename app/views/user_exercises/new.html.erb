@@ -17,17 +17,22 @@
      </div>
    </nav>
 
+<div id="form-main">
+  <div id="form-enter">
+    <div id="new-form">
 
+      <div style="text-align: center;"><h1>Did you Exercise today?</h1></div>
+      <%= form_for(@exercise) do |f| %>
+      <div style="text-align: center;"><%= f.label :activity %></div>
+      <div style="text-align: center; color: black;"><%= f.collection_select(:exercise_id, Exercise.all, :id, :activity) %></div>
+      <div style="text-align: center;"><%= f.label "Duration (hours)" %></div>
+      <div style="text-align: center; color: black;"><%= f.number_field :duration %></div>
+      <div style="text-align: center;"><%= f.label :date_completed %></div>
+      <div style="text-align: center; color: black;">><%= f.date_field :date_completed %></div><br><br>
+      <div style="text-align: center; color: black;"><%= f.submit%></div>
+      <% end %>
 
-<h1>Exercise Form</h1>
-<%= form_for(@exercise) do |f| %>
-<%= f.label :activity %>
-<%= f.collection_select(:exercise_id, Exercise.all, :id, :activity) %>
-<%= f.label :duration %>
-<%= f.number_field :duration %>
-<%= f.label :date_completed %>
-<%= f.date_field :date_completed %>
-<%= f.submit%>
-<% end %>
-
+    </div>
+  </div>
+</div>
 </body>
