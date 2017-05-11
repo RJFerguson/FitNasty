@@ -1,0 +1,14 @@
+<div>
+  <h1><%= @user.progress_message %></h1>
+</div>
+
+<div class="row" id="progress_chart">
+  <h1>Progress Chart</h1>
+
+  <%= line_chart [
+    {name: "Projection", data: @user.progress_projection },
+    {name: "Actual Progress", data: @user.progress_in_action }
+  ], min: (@user.start_weight - ((@user.goal_weight - @user.start_weight) * 2).abs),
+    max:(@user.start_weight + ((@user.goal_weight - @user.start_weight) * 2).abs)  %>
+
+</div>
