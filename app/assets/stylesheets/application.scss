@@ -42,7 +42,7 @@ div#center {
 
 h1#logo {
   font-size: 100px;
-  color: #000;
+  color: #ffffff;
   font-weight: 500;
   margin: 8x;
   margin-top: 400px;
@@ -52,7 +52,7 @@ div#center span {
   position: relative;
   top: -5px;
   font-size: 50px;
-  color: inherit;
+  color: #ffffff;
 }
 
 @-webkit-keyframes janimation {
@@ -62,11 +62,11 @@ div#center span {
   }
   95% {
     -webkit-transform: rotate(0deg) scale(1.1) translate(0px, 5px);
-    color: #999;
+    color: #ffffff;
   }
   100% {
     -webkit-transform: rotate(0deg) scale(1) translate(0px, 0px);
-    color: #999;
+    color: #ffffff;
   }
 }
 

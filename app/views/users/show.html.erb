@@ -4,41 +4,65 @@
   </head>
 
   <body>
-    <h1>Welcome <%= @user.name %></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row" id="stats">
+            <h1>Welcome
+              <%= @user.name %></h1>
 
-    <div>
-      <div>
-        <h2>Daily Sum Up</h2>
-        <p> Today's Caloric Intake: <%=  @user.total_calories_eaten %></p>
-        <p> Calories Burned Total: <%= @user.total_calories_burned %></p>
-        <p> Caloric Net: <%= @user.net_calories %></p>
-        <p> Current Weight: <%= @user.show_weight %></p>
+            <h2>Daily Sum Up</h2>
+            <p>
+              Today's Caloric Intake:
+              <%=  @user.total_calories_eaten %></p>
+            <p>
+              Calories Burned Total:
+              <%= @user.total_calories_burned %></p>
+            <p>
+              Caloric Net:
+              <%= @user.net_calories %></p>
+            <p>
+              Current Weight:
+              <%= @user.show_weight %></p>
+          </div>
+
+          <div class="row" id="left_table">
+            <h2>Sleep Log</h2>
+            <% sleep_log_hash = {} %>
+            <% @user.user_sleeps.each {|x| sleep_log_hash[x.sleep_date] = 0 }%>
+            <% sleep_log_hash.map {|k,v| sleep_log_hash[k] =  UserSleep.where(user_id: @user.id, sleep_date: k).sum(&:duration) }%>
+            <%= line_chart sleep_log_hash, xtitle: "Date", ytitle: "Sleep Duration" %>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+
+          <div class="row" id="right_tables">
+            <h2>Food Log</h2>
+            <% food_log_hash = {} %>
+            <% @user.user_foods.each {|x| food_log_hash[x.date_eat] = 0 }%>
+            <% food_log_hash.map {|k,v| food_log_hash[k] =  UserFood.all.where(user_id: @user.id, date_eat: k).sum(&:calories) }%>
+            <%= line_chart food_log_hash, xtitle: "Date", ytitle: "Caloric Intake"%>
+          </div>
+
+          <div class="row" id="right_tables">
+            <h2>Exercise Log</h2>
+            <% exercise_log_hash = {} %>
+            <% @user.user_exercises.each {|x| exercise_log_hash[x.date_completed] = 0 }%>
+            <% exercise_log_hash.map {|k,v| exercise_log_hash[k] =  UserExercise.where(user_id: @user.id, date_completed: k).sum(&:calories) }%>
+            <%= line_chart exercise_log_hash, xtitle: "Date", ytitle: "Calories Burned" %>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <h2>Food Log</h2>
+      <div class="row">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+            <span class="sr-only">
+              <%= ((@user.show_weight.to_f / @user.goal_weight.to_f) - 1 ) * 100 %>% Complete</span>
+          </div>
+        </div>
       </div>
-      <% food_log_hash = {} %>
-      <% @user.user_foods.each {|x| food_log_hash[x.date_eat] = x.calories }%>
-      <%= line_chart food_log_hash, xtitle: "Date", ytitle: "Caloric Intake"%>
-      <div>
-        <h2>Sleep Log</h2>
-        <% sleep_log_hash = {} %>
-        <% @user.user_sleeps.each {|x| sleep_log_hash[x.sleep_date] = x.duration }%>
-        <%= line_chart sleep_log_hash, xtitle: "Date", ytitle: "Sleep Duration" %>
-      </div>
-
-      <div>
-        <h2>Exercise Log</h2>
-        <% exercise_log_hash = {} %>
-        <% @user.user_exercises.each {|x| exercise_log_hash[x.date_completed] = x.calories }%>
-        <%= line_chart exercise_log_hash, xtitle: "Date", ytitle: "Calories Burned" %>
-      </div>
-
     </div>
-
-
-    <%= link_to 'Log Out', logout_path, method: :delete%>
-
   </body>
 </html>
