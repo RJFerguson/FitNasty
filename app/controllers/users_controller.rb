@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   
+
   def new
     @user = User.new
   end
@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(session[:user_id])
-    end
+    @user = User.find(session[:user_id])
+  end
 
   def update
     @user = User.find(params[:id])
@@ -35,6 +35,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.delete
+  end
+
+  def progress_page
+    @user = User.find(session[:user_id])
   end
 
   private
