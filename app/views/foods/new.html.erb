@@ -9,14 +9,4 @@
 <%=f.submit%>
 <% end %>
 
-<% if @food.calories %>
 
-Serving Size: <%= @serving_size %>
-Calories per Serving Size <%= @food.calories %>
-<%= form_tag, foods_path do %>
-<%= label_tag(:servings, "Number of Servings:") %>
-<%= number_field_taf(:servings) %>
-<%= submit_tag %>
-<% end %>
-
-<% end %>

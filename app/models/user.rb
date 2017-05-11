@@ -45,6 +45,23 @@ end
   end
 end
 
+
+  def current_progress 
+    if self.start_weight.to_f < self.goal_weight.to_f 
+      if ((self.show_weight.to_f - self.start_weight.to_f) / (self.goal_weight.to_f - self.start_weight.to_f)) < 0 
+        0 
+      else 
+        (self.show_weight.to_f - self.start_weight.to_f) / (self.goal_weight.to_f - self.start_weight.to_f)
+      end 
+    else 
+      if ((self.start_weight.to_f - self.show_weight.to_f) / (self.start_weight.to_f - self.goal_weight.to_f)) < 0 
+        0 
+      else 
+        (self.start_weight.to_f - self.show_weight.to_f) / (self.start_weight.to_f - self.goal_weight.to_f)
+      end  
+    end 
+  end 
+
   private
 
   def day_end_totals
