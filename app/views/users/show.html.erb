@@ -27,7 +27,7 @@
         </p>
       </div>
 
-      <div class="col-sm-4 col-sm-offset-2" id="right_tables">
+      <div class="col-sm-5 col-sm-offset-1" id="right_tables">
         <h2>Food Log</h2>
         <% food_log_hash = {} %>
         <% @user.user_foods.each {|x| food_log_hash[x.date_eat] = 0 }%>
@@ -45,7 +45,7 @@
         <%= line_chart sleep_log_hash, xtitle: "Date", ytitle: "Sleep Duration" %>
       </div>
 
-      <div class="col-sm-4 col-sm-offset-2" id="right_tables">
+      <div class="col-sm-5 col-sm-offset-1" id="right_tables">
         <h2>Exercise Log</h2>
         <% exercise_log_hash = {} %>
         <% @user.user_exercises.each {|x| exercise_log_hash[x.date_completed] = 0 }%>

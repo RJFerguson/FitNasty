@@ -16,24 +16,25 @@
 //   box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
 // }
 
-div#stats.col-sm-6 {
+div#stats.col-sm-4.col-sm-offset-1 {
   text-align: center;
   background-color: rgba(255,255,255,.7);
-  // margin: 10px;
+  margin-top: 10px;
+  border: 2px solid #000000;
+}
+
+div#right_tables.col-sm-5.col-sm-offset-1 {
+  background-color: rgba(255,255,255,.7);
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 25px;
   border: 2px solid #000000;
 }
 
-div#right_tables.col-sm-4 {
+div#left_table.col-sm-4.col-sm-offset-1 {
   background-color: rgba(255,255,255,.7);
-  // margin: 10px;
-  border-radius: 25px;
-  border: 2px solid #000000;
-}
-
-div#left_table.col-sm-6 {
-  background-color: rgba(255,255,255,.7);
-  // margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 25px;
   border: 2px solid #000000;
 }
