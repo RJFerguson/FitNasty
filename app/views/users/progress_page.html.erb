@@ -4,7 +4,6 @@
 
 <div class="row" id="progress_chart">
   <h1>Progress Chart</h1>
-
   <%= line_chart [
     {name: "Projection", data: @user.progress_projection },
     {name: "Actual Progress", data: @user.progress_in_action }
