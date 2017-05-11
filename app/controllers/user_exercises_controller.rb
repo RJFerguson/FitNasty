@@ -2,6 +2,7 @@ class UserExercisesController < ApplicationController
 
   def new
     @exercise = UserExercise.new
+    @user = current_user
     # byebug
   end
 

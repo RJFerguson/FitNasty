@@ -7,6 +7,8 @@
        </div>
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav">
+           <li><a href="<%=user_path(@user)%>">Dashboard</a></li>
+           <li><a href="<%=progress_path(@user)%>">Progress Detail</a></li>
            <li><a href="<%=new_food_path%>">Add Food</a></li>
            <li><a href="<%=new_user_exercise_path%>">Add Exercise</a></li>
            <li><a href="<%=new_user_sleep_path%>">Add Sleep</a></li>

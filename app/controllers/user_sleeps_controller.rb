@@ -3,6 +3,7 @@ class UserSleepsController < ApplicationController
 
   def new
     @sleep = UserSleep.new
+    @user = current_user
   end
 
   def create
