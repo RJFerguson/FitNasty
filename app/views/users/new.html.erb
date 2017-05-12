@@ -11,9 +11,9 @@
         <div style="text-align: center;"><%= f.label :age %></div>
         <div style="text-align: center; color: black;"><%= f.number_field :age %></div><br>
         <div style="text-align: center;"><%= f.label :height %></div>
-        <div style="text-align: center; color: black;"><%= f.number_field :height%></div><br> 
+        <div style="text-align: center; color: black;"><%= f.number_field :height%></div><br>
         <div style="text-align: center;"><%= f.label :gender %></div>
-        <div style="text-align: center; color: black;"><%= f.text_field :gender %></div><br>
+        <div style="text-align: center; color: black;"><%= f.select :gender, options_for_select(['Woman', 'Man']) %></div><br>
         <div style="text-align: center;"><%= f.label :start_weight %></div>
         <div style="text-align: center; color: black;"><%= f.number_field :start_weight %></div><br>
         <div style="text-align: center;"><%= f.label :goal_weight %></div>

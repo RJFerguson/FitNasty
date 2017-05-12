@@ -10,7 +10,7 @@ class UserExercise < ApplicationRecord
     if self.user.gender == 'Woman'
     	bmr = (9.56 * kilo) + (1.85 * cm) - (4.68 * age) + 655
     	(bmr / 24 * self.duration * self.exercise.met).to_f
-    elsif self.user.gender == "Male"
+    elsif self.user.gender == "Man"
     	bmr = (13.75 * kilo) + (5 * cm) - (6.76 * age) + 66
     	(bmr / 24 * self.duration * self.exercise.met).to_f
     end
