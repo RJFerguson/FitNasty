@@ -38,10 +38,9 @@
         Caloric Net:
         <%= @user.net_calories %>
       </p>
-      <p>
-        Current Weight:
-        <%= @user.show_weight %>
-      </p>
+      <p>Starting Weight: <%= @user.start_weight %></p>
+      <p><strong>Current Weight: <%= @user.show_weight %></strong></p>
+      <p>Goal Weight: <%= @user.goal_weight %></p>
     </div>
 
     <div class="block x2">
