@@ -1,0 +1,512 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* line 3, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#feedback-page {
+  text-align: center;
+}
+
+/* line 7, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#form-main {
+  width: 100%;
+  float: left;
+  padding-top: 0px;
+}
+
+/* line 13, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#form-div {
+  background-color: rgba(72, 72, 72, 0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+/* line 29, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.feedback-input {
+  color: #3c3c3c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #f8f8f8;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+}
+
+/* line 47, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.feedback-input:focus {
+  background: #f8f8f8;
+  box-shadow: 0;
+  border: 3px solid #3498db;
+  color: #3498db;
+  outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+/* line 56, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.focused {
+  color: #30aed6;
+  border: #30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+/* line 62, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#name {
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 69, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#name:focus {
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 8px 5px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 77, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#password {
+  background-image: url(https://cdn.onlinewebfonts.com/svg/img_398183.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 84, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#password:focus {
+  background-image: url(https://cdn.onlinewebfonts.com/svg/img_398183.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+/* line 91, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#button-blue {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  float: left;
+  width: 100%;
+  border: #fbfbfb solid 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+
+/* line 109, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+#button-blue:hover {
+  background-color: transparent;
+  color: #0493bd;
+}
+
+/* line 114, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.submit:hover {
+  color: #3498db;
+}
+
+/* line 118, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.ease {
+  width: 0px;
+  height: 74px;
+  background-color: #fbfbfb;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -ms-transition: .3s ease;
+  transition: .3s ease;
+}
+
+/* line 129, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+.submit:hover .ease {
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+@media only screen and (max-width: 580px) {
+  /* line 135, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/sessions.scss */
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+/* line 19, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+h2 {
+  text-align: center;
+}
+
+/* line 23, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+div.container-fluid {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* line 28, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+div.progress {
+  border: 1.5px solid #000000;
+  margin: 10px;
+  position: relative;
+  top: 180px;
+}
+
+/* line 35, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+#progress-chart {
+  text-align: center;
+  margin: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  border: 2px solid #000000;
+  padding: 10px;
+}
+
+/* line 44, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.content {
+  height: 550px;
+  width: 1200px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: white;
+  -webkit-box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* line 58, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.stats {
+  width: 300px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0);
+  left: 20px;
+  top: 15px;
+  position: relative;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+}
+
+/* line 72, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.x2 {
+  position: absolute;
+  height: 370px;
+  width: 500px;
+  left: 700px;
+  top: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  line-height: 250px;
+  color: black;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+/* line 87, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.x3 {
+  position: absolute;
+  height: 370px;
+  width: 500px;
+  left: 650px;
+  top: 65px;
+  background-color: rgba(255, 255, 255, 0.7);
+  line-height: 250px;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+/* line 101, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.x4 {
+  position: absolute;
+  height: 370px;
+  width: 500px;
+  left: 450px;
+  top: 125px;
+  background-color: rgba(255, 255, 255, 0.7);
+  line-height: 150px;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+/* line 115, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.block {
+  -webkit-animation: scaledown 1s linear;
+  -moz-animation: scaledown 1s linear;
+  animation: scaledown 1s linear;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards;
+}
+
+/* line 123, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/users.scss */
+.block:hover {
+  z-index: 100;
+  -webkit-animation: scale 1s linear;
+  -moz-animation: scale 1s linear;
+  animation: scale 1s linear;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards;
+  background-color: white;
+  color: black;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    -webkit-box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+@keyframes scaledown {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#form-enter {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+/* line 35, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#form-main {
+  width: 100%;
+  float: left;
+  padding-top: 0px;
+}
+
+/* line 41, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#new-form {
+  color: #ffffff;
+}
+
+/* line 45, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+body {
+  background: url("welcome2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 50, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-sleep {
+  background: url("add_sleep_pic2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 55, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-food {
+  background: url("add_food_pic2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 60, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-exercise-submit {
+  background: url("exercise_submit2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 65, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-sleep-submit {
+  background: url("waking_up2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 70, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-food-submit {
+  background: url("food2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 75, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-signup {
+  background: url("signup2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 80, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#signin {
+  background: url("sign_in_pic2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 85, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-home {
+  background: url("dashboard_pic2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 90, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+#user-exercise {
+  background: url("add_exercise_pic2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* line 96, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center {
+  position: absolute;
+  height: 475px;
+  text-align: center;
+}
+
+/* line 104, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+h1#logo {
+  font-size: 100px;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 8x;
+  margin-top: 400px;
+}
+
+/* line 112, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center span {
+  position: relative;
+  top: -5px;
+  font-size: 50px;
+  color: #ffffff;
+}
+
+@-webkit-keyframes janimation {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0) translate(0px, 0px);
+    color: transparent;
+  }
+  95% {
+    -webkit-transform: rotate(0deg) scale(1.1) translate(0px, 5px);
+    color: #ffffff;
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1) translate(0px, 0px);
+    color: #ffffff;
+  }
+}
+/* line 134, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div {
+  position: relative;
+  display: inline-block;
+  -webkit-animation: janimation 5s linear;
+}
+
+/* line 140, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_1 {
+  -webkit-animation-delay: 0s;
+}
+
+/* line 144, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_2 {
+  -webkit-animation-delay: .1s;
+}
+
+/* line 148, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_3 {
+  -webkit-animation-delay: .2s;
+}
+
+/* line 152, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_4 {
+  -webkit-animation-delay: .3s;
+}
+
+/* line 156, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_5 {
+  -webkit-animation-delay: .4s;
+}
+
+/* line 160, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_6 {
+  -webkit-animation-delay: .5s;
+}
+
+/* line 164, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_7 {
+  -webkit-animation-delay: .6s;
+}
+
+/* line 168, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_8 {
+  -webkit-animation-delay: .7s;
+}
+
+/* line 172, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_9 {
+  -webkit-animation-delay: .8s;
+}
+
+/* line 176, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_10 {
+  -webkit-animation-delay: .9s;
+}
+
+/* line 180, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_11 {
+  -webkit-animation-delay: 1s;
+}
+
+/* line 184, /Users/ryan/workspace/fitness_dashboard/app/assets/stylesheets/application.scss */
+div#center div.letter_container_12 {
+  -webkit-animation-delay: 1.1s;
+}
