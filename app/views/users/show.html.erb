@@ -6,7 +6,7 @@
    <nav class="navbar navbar-default">
      <div class="container-fluid">
        <div class="navbar-header">
-         <a class="navbar-brand" href="<%=root_path%>">FitNasty</a>
+         <a class="navbar-brand" href="<%=root_path%>"><%= image_tag("FITNASTY-black.png", size: "125x30")%></a>
        </div>
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav">
@@ -71,7 +71,9 @@
       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@user.current_progress * 100).to_i %>%">
         <span class="sr-only" style="color:black;"><%= @user.current_progress * 100 %>% Complete</span>
       </div>
+      <p style="color:black;"><%= (@user.current_progress * 100).to_i %>%</p>
     </div>
+
   </div>
 
 <!-- ##################################### -->

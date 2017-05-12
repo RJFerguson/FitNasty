@@ -148,5 +148,3 @@ exercise_type = {
 		seed_date =	seed_date + 1 
 
 	end 
-
-
