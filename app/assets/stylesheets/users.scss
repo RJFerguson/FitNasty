@@ -26,8 +26,10 @@
  }
 
  div.progress {
-   border: 2px solid #000000;
+   border: 1.5px solid #000000;
    margin: 10px;
+   position: relative;
+   top: 180px;
  }
 
 #progress-chart {
@@ -62,4 +64,116 @@ div#left_table.col-sm-4.col-sm-offset-1 {
   margin-bottom: 10px;
   border-radius: 25px;
   border: 2px solid #000000;
+}
+
+// ##################
+
+.content{
+  height: 550px;
+  width: 1200px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: white;
+-webkit-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+-moz-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+}
+
+.x1{
+  width:300px;
+  height:320px;
+  background-color: rgba(255,255,255,0);
+  left: 20px;
+  top: 15px;
+  position: relative;
+  line-height:40px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #000000;
+}
+
+.x2{
+  position:absolute;
+  height:370px;
+  width:500px;
+  left:700px;
+  top:10px;
+  background-color:rgba(255,255,255,.7);
+  line-height:250px;
+  color:black;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+.x3{
+  position:absolute;
+  height:370px;
+  width:500px;
+  left:650px;
+  top:65px;
+  background-color:rgba(255,255,255,.7);
+  line-height:250px;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+.x4{
+  position:absolute;
+  height:370px;
+  width:500px;
+  left:450px;
+  top:125px;
+  background-color:rgba(255,255,255,.7);
+  line-height:150px;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: black;
+  padding-left: 20px;
+}
+
+.block{
+  -webkit-animation:scaledown 1s linear;
+  -moz-animation:scaledown 1s linear;
+  animation:scaledown 1s linear;
+  transform-origin:50% 50%;
+  animation-fill-mode: forwards;
+}
+
+.block:hover{
+   z-index:100;
+  -webkit-animation:scale 1s linear;
+  -moz-animation:scale 1s linear;
+  animation:scale 1s linear;
+  transform-origin:50% 50%;
+  animation-fill-mode: forwards;
+  background-color:rgba(255,255,255,1);
+  color: black;
+}
+
+@keyframes scale{
+  0%{
+    transform:scale(1.0);
+  }
+  100%{
+    transform:scale(1.1);
+    -webkit-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+-moz-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
+  }
+}
+
+@keyframes scaledown{
+  0%{
+    transform:scale(1.1);
+  }
+   100%{
+    transform:scale(1.0);
+  }
 }
