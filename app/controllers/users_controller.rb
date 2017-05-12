@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    
     @user = User.find(session[:user_id])
   end
 
@@ -39,6 +40,11 @@ class UsersController < ApplicationController
 
   def progress_page
     @user = User.find(session[:user_id])
+    if @user.user_weights.size == 0 
+      flash[:notice] = "No Analytic Information Available"
+      redirect_to profile_path
+      
+    end 
   end
 
   private
