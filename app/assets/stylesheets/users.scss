@@ -41,33 +41,6 @@
   padding: 10px;
 }
 
-div#stats {
-  text-align: center;
-  background-color: rgba(255,255,255,.7);
-  margin-top: 10px;
-  border: 2px solid #000000;
-  border-radius: 25px;
-  padding: 10px;
-}
-
-div#right_tables.col-sm-5.col-sm-offset-1 {
-  background-color: rgba(255,255,255,.7);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
-  border: 2px solid #000000;
-}
-
-div#left_table.col-sm-4.col-sm-offset-1 {
-  background-color: rgba(255,255,255,.7);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
-  border: 2px solid #000000;
-}
-
-// ##################
-
 .content{
   height: 550px;
   width: 1200px;
@@ -82,7 +55,7 @@ div#left_table.col-sm-4.col-sm-offset-1 {
 box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
 }
 
-.x1{
+.stats{
   width:300px;
   height:320px;
   background-color: rgba(255,255,255,0);
@@ -93,6 +66,7 @@ box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
   text-align: center;
   border-radius: 25px;
   border: 1px solid #000000;
+  color: black;
 }
 
 .x2{
