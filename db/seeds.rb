@@ -84,8 +84,16 @@ exercise_type = {
 
 	#seed UserSleep
 
+  UserSleep.create(user_id: 1, calories: 340, duration: 5, sleep_date: "2017-05-01")
+  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-02")
+  UserSleep.create(user_id: 1, calories: 680, duration: 10, sleep_date: "2017-05-03")
+  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-04")
+  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-05")
+  UserSleep.create(user_id: 1, calories: 816, duration: 12, sleep_date: "2017-05-06")
+  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-07")
+  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-08")
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-09")
-  UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-10")
+  UserSleep.create(user_id: 1, calories: 612, duration: 9, sleep_date: "2017-05-10")
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-11")
   UserSleep.create(user_id: 1, calories: 340, duration: 5, sleep_date: "2017-05-12")
   UserSleep.create(user_id: 1, calories: 680, duration: 10, sleep_date: "2017-05-13")
@@ -99,3 +107,5 @@ exercise_type = {
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-21")
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-22")
   UserSleep.create(user_id: 1, calories: 204, duration: 3, sleep_date: "2017-05-23")
+
+#seed Mary exercises
