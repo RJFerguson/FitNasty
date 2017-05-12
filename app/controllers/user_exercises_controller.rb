@@ -12,7 +12,7 @@ class UserExercisesController < ApplicationController
     @exercise.user_id = @user.id
     @exercise.calories = @exercise.calories_burned
     if @exercise.save
-      @user.current_weight(@exercise.calories)
+      @user.current_weight(-@exercise.calories)
       redirect_to user_exercise_path(@exercise)
     else
       redirect_to new_user_exercise_path

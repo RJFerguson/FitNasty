@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
 
   def net_calories
-    self.total_calories_eaten - (self.total_calories_burned)
+    self.total_calories_eaten - self.total_calories_burned
   end
 
   def current_weight(calories)

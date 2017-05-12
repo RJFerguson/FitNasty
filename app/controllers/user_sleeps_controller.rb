@@ -11,7 +11,7 @@ class UserSleepsController < ApplicationController
     @sleep.calories = @sleep.calories_burned
     @user = current_user
     if @sleep.save
-      @user.current_weight(@sleep.calories)
+      @user.current_weight(-@sleep.calories)
       redirect_to user_sleep_path(@sleep)
     else
       redirect_to new_user_sleep_path
