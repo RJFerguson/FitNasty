@@ -68,7 +68,7 @@ end
     cdate = self.start_date
 
     until activity_projection.keys.last == self.goal_date
-      activity_projection[cdate + 1] = 0
+      activity_projection[cdate] = 0
       cdate += 1
     end
 

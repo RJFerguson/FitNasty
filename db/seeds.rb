@@ -54,6 +54,8 @@ exercise_type = {
 
 	#Seed UserFood
 
+
+
 	UserFood.create(user_id: 1, food_id: 1, calories: 201, user_serving: 1 ,date_eat: "2017-05-01")
 	UserFood.create(user_id: 1, food_id: 2, calories: 50, user_serving: 1 ,date_eat: "2017-05-01")
 	UserFood.create(user_id: 1, food_id: 3, calories: 52, user_serving: 1 ,date_eat: "2017-05-01")
@@ -92,7 +94,9 @@ exercise_type = {
 	UserFood.create(user_id: 1, food_id: 5, calories: 18,  user_serving: 2 ,date_eat: "2017-05-11")
 	UserFood.create(user_id: 1, food_id: 6, calories: 116,  user_serving: 1 ,date_eat: "2017-05-11")
 	UserFood.create(user_id: 1, food_id: 1, calories: 201,  user_serving: 2 ,date_eat: "2017-05-11")
-	
+	UserFood.create(user_id: 1, food_id: 5, calories: 18,  user_serving: 2 ,date_eat: "2017-05-12")
+	UserFood.create(user_id: 1, food_id: 6, calories: 116,  user_serving: 1 ,date_eat: "2017-05-12")
+	UserFood.create(user_id: 1, food_id: 1, calories: 201,  user_serving: 2 ,date_eat: "2017-05-12")
 
 	#seed UserSleep
 
@@ -107,18 +111,42 @@ exercise_type = {
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-09")
   UserSleep.create(user_id: 1, calories: 612, duration: 9, sleep_date: "2017-05-10")
   UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-11")
+	UserSleep.create(user_id: 1, calories: 544, duration: 8, sleep_date: "2017-05-12")
 
 	#seed UserExercise 
 
-	UserExercise.create(user_id: 1, exercise_id: 12, duration: 1, calories: , date_completed: "2017-05-01" )
-	UserExercise.create(user_id: 1, exercise_id: 13, duration: 2, calories: , date_completed: "2017-05-02" )
-	UserExercise.create(user_id: 1, exercise_id: 14, duration: 3, calories: , date_completed: "2017-05-03" )
-	UserExercise.create(user_id: 1, exercise_id: 15, duration: 2, calories: , date_completed: "2017-05-04" )
-	UserExercise.create(user_id: 1, exercise_id: 16, duration: 3, calories: , date_completed: "2017-05-05" )
-	UserExercise.create(user_id: 1, exercise_id: 9, duration: 2, calories: , date_completed: "2017-05-06" )
-	UserExercise.create(user_id: 1, exercise_id: 16, duration: 1, calories: , date_completed: "2017-05-07" )
-	UserExercise.create(user_id: 1, exercise_id: 10, duration: 2, calories: , date_completed: "2017-05-08" )
-	UserExercise.create(user_id: 1, exercise_id: 11, duration: 3, calories: , date_completed: "2017-05-09" )
-	UserExercise.create(user_id: 1, exercise_id: 11, duration: 3, calories: , date_completed: "2017-05-10" )
-	UserExercise.create(user_id: 1, exercise_id: 7, duration: 8, calories: , date_completed: "2017-05-11" )
-	
+	UserExercise.create(user_id: 1, exercise_id: 12, duration: 1, calories: 516, date_completed: "2017-05-01" )
+	UserExercise.create(user_id: 1, exercise_id: 13, duration: 2, calories: 1033, date_completed: "2017-05-02" )
+	UserExercise.create(user_id: 1, exercise_id: 14, duration: 3, calories: 1550, date_completed: "2017-05-03" )
+	UserExercise.create(user_id: 1, exercise_id: 15, duration: 2, calories: 1227, date_completed: "2017-05-04" )
+	UserExercise.create(user_id: 1, exercise_id: 16, duration: 3, calories: 1937, date_completed: "2017-05-05" )
+	UserExercise.create(user_id: 1, exercise_id: 9, duration: 2, calories: 839, date_completed: "2017-05-06" )
+	UserExercise.create(user_id: 1, exercise_id: 16, duration: 1, calories: 871, date_completed: "2017-05-07" )
+	UserExercise.create(user_id: 1, exercise_id: 10, duration: 2, calories: 904, date_completed: "2017-05-08" )
+	UserExercise.create(user_id: 1, exercise_id: 11, duration: 3, calories: 1550, date_completed: "2017-05-09" )
+	UserExercise.create(user_id: 1, exercise_id: 11, duration: 2, calories: 1033, date_completed: "2017-05-10" )
+	UserExercise.create(user_id: 1, exercise_id: 7, duration: 5, calories: 1614, date_completed: "2017-05-11" )
+	UserExercise.create(user_id: 1, exercise_id: 7, duration: 5, calories: 1614, date_completed: "2017-05-12" )
+
+	seed_date = User.first.start_date
+	mary = User.first
+
+	until seed_date == "2017-05-13".to_date 
+		food = (UserFood.where(user_id: mary.id, date_eat: seed_date)).sum(&:calories)
+		exercise = (UserExercise.where(user_id: mary.id, date_completed: seed_date)).sum(&:calories)
+		sleep = (UserSleep.where(user_id: mary.id, sleep_date: seed_date)).sum(&:calories)
+		net_calories = food - exercise - sleep
+
+		if mary.user_weights.last == nil
+      curr_weight = mary.start_weight + net_calories/3500
+			UserWeight.create(user_id: mary.id, day: seed_date, weight: curr_weight)
+    else
+      curr_weight = mary.user_weights.last.weight + net_calories/3500
+			UserWeight.create(user_id: mary.id, day: seed_date, weight: curr_weight)
+  	end
+
+		seed_date =	seed_date + 1 
+
+	end 
+
+
